@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f5d3a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Smokies Pack">
+<link rel="apple-touch-icon" href="app-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<title>4-Day Smokies / Appalachian Trail Packing Checklist</title>
+<style>
+:root{--bg:#f4f1e8;--card:#fffdf7;--ink:#22251f;--muted:#687064;--accent:#2f5d3a;--border:#d9d6ca;--warn:#8a5b20}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;padding-bottom:env(safe-area-inset-bottom)}
+header{background:linear-gradient(135deg,#294f34,#3e6d47);color:white;padding:calc(28px + env(safe-area-inset-top)) 18px 24px}.wrap{max-width:980px;margin:auto}
+h1{margin:0 0 6px;font-size:clamp(1.7rem,4vw,2.5rem)}.subtitle{opacity:.9;max-width:760px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
+button{border:0;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:650}.primary{background:white;color:var(--accent)}.secondary{background:#ffffff22;color:white;border:1px solid #ffffff55}
+.progressbox{margin-left:auto;min-width:220px}.progressbar{height:10px;background:#ffffff33;border-radius:999px;overflow:hidden;margin-top:5px}.progressfill{height:100%;width:0;background:white;transition:width .2s ease}
+main{padding:22px 16px 50px}.notice{background:#fff7e7;border:1px solid #ead6ad;color:#63471d;padding:14px 16px;border-radius:12px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 2px 8px #00000008}
+section h2{margin:0 0 10px;font-size:1.08rem;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:8px}
+label.item{display:flex;gap:10px;align-items:flex-start;padding:7px 2px}input[type=checkbox]{width:19px;height:19px;margin-top:2px;accent-color:var(--accent);flex:0 0 auto}
+.itemtext{flex:1}.note{display:block;color:var(--muted);font-size:.83rem;margin-top:2px}.need{color:var(--warn);font-weight:700}.shared{font-weight:700;color:#5d4a2a}.footer-note{margin-top:18px;color:var(--muted);font-size:.9rem}.leave{background:#f6f2ef}
+@media print{body{background:white}header{background:white;color:black;padding:0 0 15px}.toolbar{display:none}main{padding:0}section{break-inside:avoid;box-shadow:none}.notice{border:1px solid #bbb;background:white;color:black}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<h1>4-Day Smokies / Appalachian Trail Packing Checklist</h1>
+<div class="subtitle">Built for 4 hiking days / 3 shelter nights with a Gregory Zulu 65, REI Trailmade 25 Long, Paria ReCharge XL, Sawyer Squeeze, and shared Jetboil setup.</div>
+<div class="toolbar">
+<button class="primary" onclick="window.print()">Print / Save PDF</button>
+<button class="secondary" onclick="clearChecks()">Reset checks</button>
+<div class="progressbox"><div id="progressText">0 of 0 checked</div><div class="progressbar"><div class="progressfill" id="progressFill"></div></div></div>
+</div>
+</div>
+</header>
+<main class="wrap"><div id="installHint" class="notice" style="margin-top:0"><strong>iPhone Home Screen:</strong> In Safari, tap <strong>Share</strong> → <strong>Add to Home Screen</strong>. Once added, this checklist opens like an app and keeps your checkbox progress on this device.</div>
+<div class="notice"><strong>Target loaded pack:</strong> about 26–30 lb with food and roughly 2 L of water. Your two 1 L bottles plus two 32 oz Sawyer pouches give roughly 3.9 L maximum water capacity; keep that reserve available for the driest day. Your 65 L pack does not need to be full. Keep sleeping gear and dry clothes inside the waterproof pack liner.</div>
+<div class="grid">
+
+<section><h2>Pack & Waterproofing</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">Gregory Zulu 65 L pack</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Trash-compactor / heavy-duty plastic pack liner<span class="note">Primary waterproof barrier for sleeping bag and dry clothing.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">65 L waterproof pack cover</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Small dry / zip bags for electronics and paperwork</span></label>
+</section>
+
+<section><h2>Sleep System</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">REI Trailmade 25 Long sleeping bag</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Paria ReCharge XL sleeping pad</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Paria pad repair kit / patches</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Dedicated dry sleeping socks</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Polyester base-layer top</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Polyester base-layer bottoms</span></label>
+</section>
+
+<section><h2>Water System</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">Sawyer Squeeze filter</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">1 × 32 oz Sawyer pouch — primary dirty-water bag</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">1 × 32 oz Sawyer pouch — backup / extra capacity</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">2 × ~1 L lightweight water bottles</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Sawyer coupling / backflush adapter</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Sawyer tube <span class="note">Optional; omit if you do not actually use it.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">4–6 chlorine-dioxide purification tablets<span class="note">Emergency backup only.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Electrolyte packets</span></label>
+</section>
+
+<section><h2>Rain & Insulation</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">Outdoor Ventures waterproof rain jacket</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Rain pants</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext"><span class="need">Light insulating layer — fleece or synthetic puffy</span><span class="note">Important gap in the current system; base layers alone are not enough for cool, windy shelter evenings.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Warm beanie</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Thin gloves</span></label>
+</section>
+
+<section><h2>Hiking Clothing</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">1 pair lightweight hiking pants / 5.11s — worn</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">1 lightweight synthetic hiking shirt / polo — worn</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">1 extra lightweight hiking shirt <span class="note">Optional; leave behind if you want to trim weight.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">2 pairs bamboo-cool / synthetic underwear total</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">3 pairs hiking socks total<span class="note">1 worn, 1 spare hiking pair, 1 dry sleeping pair.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Salomon trail runners</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Sun / ball cap</span></label>
+</section>
+
+<section><h2>Electronics</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">iPhone 13</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">25,000 mAh Anker power bank<span class="note">More capacity than necessary, but fine if you already own it.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Lightning charging cord</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Garmin Vivoactive</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Garmin charging cord</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Headlamp</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Fresh / spare headlamp batteries</span></label>
+</section>
+
+<section><h2>Cooking & Coffee — Shared</h2>
+<label class="item"><input type="checkbox"><span class="itemtext"><span class="shared">Friend: Jetboil stove / pot system</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext"><span class="shared">You: 1 × fresh 230 g threaded isobutane fuel canister</span><span class="note">A 450 g canister is unnecessary for this trip.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Mini Bic lighter</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Backup mini Bic <span class="note">Optional but tiny.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Spoon / spork</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Instant coffee packets</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Lightweight mug / Jetboil cup<span class="note">Prefer this over carrying a heavy Yeti mug.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">AeroPress <span class="note">Luxury item only; bring it if good coffee is worth the extra weight.</span></span></label>
+</section>
+
+<section><h2>Food — 4 Days / 3 Nights</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">3 breakfasts<span class="note">Example: 2 oatmeal packets + peanut butter + coffee each morning.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">3 dinners<span class="note">Ramen + instant potatoes + chicken/tuna is cheap, light and filling.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Trail lunches for Tues–Fri<span class="note">Tortillas + peanut butter + tuna/chicken packets.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Trail mix — portioned by day</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Energy / granola bars</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Jerky</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Dried fruit</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Candy / quick carbs</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Peanut butter squeeze pouch / packets</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Tuna / chicken shelf-stable pouches</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">1 shared extra emergency meal</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Small zip bag for trash / wrappers</span></label>
+</section>
+
+<section><h2>Food Storage / Bears</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">10–15 L lightweight food sack</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">All scented toiletries fit into food sack<span class="note">Food, wrappers, toothpaste, lip balm, etc. go on shelter bear cables.</span></span></label>
+</section>
+
+<section><h2>First Aid & Foot Care</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">Leukotape</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Blister pads / moleskin</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">A few adhesive bandages</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">2–3 sterile gauze pads</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Small roll / strip of medical tape</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Ibuprofen / acetaminophen</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Antihistamine</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Personal medications</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Tweezers</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Small amount of duct tape<span class="note">Wrap around bottle or trekking pole.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Emergency whistle<span class="note">Use pack's built-in whistle if it has one.</span></span></label>
+</section>
+
+<section><h2>Hygiene & Insect Protection</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">Toothbrush</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Travel-size toothpaste</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Hand sanitizer</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Toilet paper</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Lightweight trowel</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Zip bag for used TP / hygiene trash</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Sawyer 20% picaridin insect repellent</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Permethrin-treated hiking clothing / socks<span class="note">Treat before the trip; do not apply permethrin directly to skin.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Sunscreen</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Lip balm</span></label>
+</section>
+
+<section><h2>Navigation, Permits & Security</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">Offline trail maps downloaded to iPhone</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Paper trail / park map</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Printed / saved backcountry permit</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Park It Forward parking tag / proof</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Photo ID</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Small amount of cash + payment card</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Vehicle key secured in zipped pocket<span class="note">Do not casually move it around during the hike.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Emergency contacts / itinerary left with someone at home</span></label>
+</section>
+
+<section><h2>Trail Gear</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">Trekking poles</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Milwaukee pocket knife<span class="note">Fine if reasonably light; a huge work knife is unnecessary.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Sunglasses</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Small bandana / lightweight wipe</span></label>
+</section>
+
+<section class="leave"><h2>Leave in the Vehicle</h2>
+<label class="item"><input type="checkbox"><span class="itemtext">Tent<span class="note">Your itinerary uses reserved shelters.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Second pair of heavy 5.11 pants</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Second heavy sweatshirt</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Chaco sandals<span class="note">Comfort luxury, but roughly a pound you do not need.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Coast flashlight<span class="note">Headlamp already fills this role.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Mini butane torch</span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Heavy Yeti coffee mug<span class="note">Use a lightweight cup unless the Yeti is an intentional luxury.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Bear canister / hanging rope<span class="note">Use shelter bear-cable system for this itinerary.</span></span></label>
+<label class="item"><input type="checkbox"><span class="itemtext">Large first-aid kit / unnecessary tools</span></label>
+</section>
+
+</div>
+<div class="footer-note">Tip: check off “Leave in the Vehicle” items only after confirming you intentionally did not put them in the backpack. Your checklist state is saved automatically in this browser.</div>
+</main>
+
+<script>
+const boxes=[...document.querySelectorAll('input[type="checkbox"]')];
+function update(){
+ const checked=boxes.filter(b=>b.checked).length;
+ document.getElementById('progressText').textContent=`${checked} of ${boxes.length} checked`;
+ document.getElementById('progressFill').style.width=(checked/boxes.length*100)+'%';
+ localStorage.setItem('smokiesChecklist',JSON.stringify(boxes.map(b=>b.checked)));
+}
+function load(){
+ try{
+   const saved=JSON.parse(localStorage.getItem('smokiesChecklist')||'[]');
+   boxes.forEach((b,i)=>{if(i<saved.length)b.checked=!!saved[i]});
+ }catch(e){}
+ update();
+}
+function clearChecks(){
+ if(confirm('Clear every checkbox?')){
+   boxes.forEach(b=>b.checked=false); update();
+ }
+}
+boxes.forEach(b=>b.addEventListener('change',update)); load();
+const standalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+if (standalone) { const hint=document.getElementById('installHint'); if(hint) hint.style.display='none'; }
+</script>
+</body></html>
