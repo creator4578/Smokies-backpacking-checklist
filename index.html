@@ -1,217 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#2f5d3a">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Smokies Pack">
-<link rel="apple-touch-icon" href="app-icon.png">
-<link rel="manifest" href="manifest.webmanifest">
-
-<title>4-Day Smokies / Appalachian Trail Packing Checklist</title>
-<style>
-:root{--bg:#f4f1e8;--card:#fffdf7;--ink:#22251f;--muted:#687064;--accent:#2f5d3a;--border:#d9d6ca;--warn:#8a5b20}
-*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;padding-bottom:env(safe-area-inset-bottom)}
-header{background:linear-gradient(135deg,#294f34,#3e6d47);color:white;padding:calc(28px + env(safe-area-inset-top)) 18px 24px}.wrap{max-width:980px;margin:auto}
-h1{margin:0 0 6px;font-size:clamp(1.7rem,4vw,2.5rem)}.subtitle{opacity:.9;max-width:760px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
-button{border:0;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:650}.primary{background:white;color:var(--accent)}.secondary{background:#ffffff22;color:white;border:1px solid #ffffff55}
-.progressbox{margin-left:auto;min-width:220px}.progressbar{height:10px;background:#ffffff33;border-radius:999px;overflow:hidden;margin-top:5px}.progressfill{height:100%;width:0;background:white;transition:width .2s ease}
-main{padding:22px 16px 50px}.notice{background:#fff7e7;border:1px solid #ead6ad;color:#63471d;padding:14px 16px;border-radius:12px;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 2px 8px #00000008}
-section h2{margin:0 0 10px;font-size:1.08rem;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:8px}
-label.item{display:flex;gap:10px;align-items:flex-start;padding:7px 2px}input[type=checkbox]{width:19px;height:19px;margin-top:2px;accent-color:var(--accent);flex:0 0 auto}
-.itemtext{flex:1}.note{display:block;color:var(--muted);font-size:.83rem;margin-top:2px}.need{color:var(--warn);font-weight:700}.shared{font-weight:700;color:#5d4a2a}.footer-note{margin-top:18px;color:var(--muted);font-size:.9rem}.leave{background:#f6f2ef}
-@media print{body{background:white}header{background:white;color:black;padding:0 0 15px}.toolbar{display:none}main{padding:0}section{break-inside:avoid;box-shadow:none}.notice{border:1px solid #bbb;background:white;color:black}}
-</style>
-</head>
-<body>
-<header>
-<div class="wrap">
-<h1>4-Day Smokies / Appalachian Trail Packing Checklist</h1>
-<div class="subtitle">Built for 4 hiking days / 3 shelter nights with a Gregory Zulu 65, REI Trailmade 25 Long, Paria ReCharge XL, Sawyer Squeeze, and shared Jetboil setup.</div>
-<div class="toolbar">
-<button class="primary" onclick="window.print()">Print / Save PDF</button>
-<button class="secondary" onclick="clearChecks()">Reset checks</button>
-<div class="progressbox"><div id="progressText">0 of 0 checked</div><div class="progressbar"><div class="progressfill" id="progressFill"></div></div></div>
-</div>
-</div>
-</header>
-<main class="wrap"><div id="installHint" class="notice" style="margin-top:0"><strong>iPhone Home Screen:</strong> In Safari, tap <strong>Share</strong> → <strong>Add to Home Screen</strong>. Once added, this checklist opens like an app and keeps your checkbox progress on this device.</div>
-<div class="notice"><strong>Target loaded pack:</strong> about 26–30 lb with food and roughly 2 L of water. Your two 1 L bottles plus two 32 oz Sawyer pouches give roughly 3.9 L maximum water capacity; keep that reserve available for the driest day. Your 65 L pack does not need to be full. Keep sleeping gear and dry clothes inside the waterproof pack liner.</div>
-<div class="grid">
-
-<section><h2>Pack & Waterproofing</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">Gregory Zulu 65 L pack</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Trash-compactor / heavy-duty plastic pack liner<span class="note">Primary waterproof barrier for sleeping bag and dry clothing.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">65 L waterproof pack cover</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Small dry / zip bags for electronics and paperwork</span></label>
-</section>
-
-<section><h2>Sleep System</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">REI Trailmade 25 Long sleeping bag</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Paria ReCharge XL sleeping pad</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Paria pad repair kit / patches</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Dedicated dry sleeping socks</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Polyester base-layer top</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Polyester base-layer bottoms</span></label>
-</section>
-
-<section><h2>Water System</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">Sawyer Squeeze filter</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">1 × 32 oz Sawyer pouch — primary dirty-water bag</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">1 × 32 oz Sawyer pouch — backup / extra capacity</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">2 × ~1 L lightweight water bottles</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Sawyer coupling / backflush adapter</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Sawyer tube <span class="note">Optional; omit if you do not actually use it.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">4–6 chlorine-dioxide purification tablets<span class="note">Emergency backup only.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Electrolyte packets</span></label>
-</section>
-
-<section><h2>Rain & Insulation</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">Outdoor Ventures waterproof rain jacket</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Rain pants</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext"><span class="need">Light insulating layer — fleece or synthetic puffy</span><span class="note">Important gap in the current system; base layers alone are not enough for cool, windy shelter evenings.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Warm beanie</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Thin gloves</span></label>
-</section>
-
-<section><h2>Hiking Clothing</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">1 pair lightweight hiking pants / 5.11s — worn</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">1 lightweight synthetic hiking shirt / polo — worn</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">1 extra lightweight hiking shirt <span class="note">Optional; leave behind if you want to trim weight.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">2 pairs bamboo-cool / synthetic underwear total</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">3 pairs hiking socks total<span class="note">1 worn, 1 spare hiking pair, 1 dry sleeping pair.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Salomon trail runners</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Sun / ball cap</span></label>
-</section>
-
-<section><h2>Electronics</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">iPhone 13</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">25,000 mAh Anker power bank<span class="note">More capacity than necessary, but fine if you already own it.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Lightning charging cord</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Garmin Vivoactive</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Garmin charging cord</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Headlamp</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Fresh / spare headlamp batteries</span></label>
-</section>
-
-<section><h2>Cooking & Coffee — Shared</h2>
-<label class="item"><input type="checkbox"><span class="itemtext"><span class="shared">Friend: Jetboil stove / pot system</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext"><span class="shared">You: 1 × fresh 230 g threaded isobutane fuel canister</span><span class="note">A 450 g canister is unnecessary for this trip.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Mini Bic lighter</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Backup mini Bic <span class="note">Optional but tiny.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Spoon / spork</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Instant coffee packets</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Lightweight mug / Jetboil cup<span class="note">Prefer this over carrying a heavy Yeti mug.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">AeroPress <span class="note">Luxury item only; bring it if good coffee is worth the extra weight.</span></span></label>
-</section>
-
-<section><h2>Food — 4 Days / 3 Nights</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">3 breakfasts<span class="note">Example: 2 oatmeal packets + peanut butter + coffee each morning.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">3 dinners<span class="note">Ramen + instant potatoes + chicken/tuna is cheap, light and filling.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Trail lunches for Tues–Fri<span class="note">Tortillas + peanut butter + tuna/chicken packets.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Trail mix — portioned by day</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Energy / granola bars</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Jerky</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Dried fruit</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Candy / quick carbs</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Peanut butter squeeze pouch / packets</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Tuna / chicken shelf-stable pouches</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">1 shared extra emergency meal</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Small zip bag for trash / wrappers</span></label>
-</section>
-
-<section><h2>Food Storage / Bears</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">10–15 L lightweight food sack</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">All scented toiletries fit into food sack<span class="note">Food, wrappers, toothpaste, lip balm, etc. go on shelter bear cables.</span></span></label>
-</section>
-
-<section><h2>First Aid & Foot Care</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">Leukotape</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Blister pads / moleskin</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">A few adhesive bandages</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">2–3 sterile gauze pads</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Small roll / strip of medical tape</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Ibuprofen / acetaminophen</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Antihistamine</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Personal medications</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Tweezers</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Small amount of duct tape<span class="note">Wrap around bottle or trekking pole.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Emergency whistle<span class="note">Use pack's built-in whistle if it has one.</span></span></label>
-</section>
-
-<section><h2>Hygiene & Insect Protection</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">Toothbrush</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Travel-size toothpaste</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Hand sanitizer</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Toilet paper</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Lightweight trowel</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Zip bag for used TP / hygiene trash</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Sawyer 20% picaridin insect repellent</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Permethrin-treated hiking clothing / socks<span class="note">Treat before the trip; do not apply permethrin directly to skin.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Sunscreen</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Lip balm</span></label>
-</section>
-
-<section><h2>Navigation, Permits & Security</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">Offline trail maps downloaded to iPhone</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Paper trail / park map</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Printed / saved backcountry permit</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Park It Forward parking tag / proof</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Photo ID</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Small amount of cash + payment card</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Vehicle key secured in zipped pocket<span class="note">Do not casually move it around during the hike.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Emergency contacts / itinerary left with someone at home</span></label>
-</section>
-
-<section><h2>Trail Gear</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">Trekking poles</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Milwaukee pocket knife<span class="note">Fine if reasonably light; a huge work knife is unnecessary.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Sunglasses</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Small bandana / lightweight wipe</span></label>
-</section>
-
-<section class="leave"><h2>Leave in the Vehicle</h2>
-<label class="item"><input type="checkbox"><span class="itemtext">Tent<span class="note">Your itinerary uses reserved shelters.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Second pair of heavy 5.11 pants</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Second heavy sweatshirt</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Chaco sandals<span class="note">Comfort luxury, but roughly a pound you do not need.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Coast flashlight<span class="note">Headlamp already fills this role.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Mini butane torch</span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Heavy Yeti coffee mug<span class="note">Use a lightweight cup unless the Yeti is an intentional luxury.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Bear canister / hanging rope<span class="note">Use shelter bear-cable system for this itinerary.</span></span></label>
-<label class="item"><input type="checkbox"><span class="itemtext">Large first-aid kit / unnecessary tools</span></label>
-</section>
-
-</div>
-<div class="footer-note">Tip: check off “Leave in the Vehicle” items only after confirming you intentionally did not put them in the backpack. Your checklist state is saved automatically in this browser.</div>
-</main>
-
-<script>
-const boxes=[...document.querySelectorAll('input[type="checkbox"]')];
-function update(){
- const checked=boxes.filter(b=>b.checked).length;
- document.getElementById('progressText').textContent=`${checked} of ${boxes.length} checked`;
- document.getElementById('progressFill').style.width=(checked/boxes.length*100)+'%';
- localStorage.setItem('smokiesChecklist',JSON.stringify(boxes.map(b=>b.checked)));
-}
-function load(){
- try{
-   const saved=JSON.parse(localStorage.getItem('smokiesChecklist')||'[]');
-   boxes.forEach((b,i)=>{if(i<saved.length)b.checked=!!saved[i]});
- }catch(e){}
- update();
-}
-function clearChecks(){
- if(confirm('Clear every checkbox?')){
-   boxes.forEach(b=>b.checked=false); update();
- }
-}
-boxes.forEach(b=>b.addEventListener('change',update)); load();
-const standalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
-if (standalone) { const hint=document.getElementById('installHint'); if(hint) hint.style.display='none'; }
-</script>
-</body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#2f5d3a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Appalachian Run"><link rel="apple-touch-icon" href="app-icon.png"><link rel="manifest" href="manifest.webmanifest"><title>Appalachian Run</title><style>
+:root{--bg:#f3f1e9;--card:#fffdf8;--ink:#20251f;--muted:#687066;--green:#2f5d3a;--border:#d9d6ca;--warn:#95601f}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;padding-bottom:env(safe-area-inset-bottom)}.wrap{max-width:980px;margin:auto;padding:0 16px}header{background:linear-gradient(135deg,#294f34,#416f4b);color:#fff;padding:calc(26px + env(safe-area-inset-top)) 0 22px}h1{margin:0;font-size:clamp(1.8rem,6vw,2.7rem)}.sub{opacity:.9;margin-top:4px}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid #ffffff44;background:#ffffff18;border-radius:999px;padding:6px 9px;font-size:.84rem}nav{position:sticky;top:0;z-index:9;background:#f3f1e9ee;backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:9px 16px;max-width:980px;margin:auto}.tab{border:0;border-radius:10px;padding:10px 4px;background:transparent;font-weight:750;color:var(--muted)}.tab.on{background:var(--green);color:#fff}main{padding-top:16px}.view{display:none}.view.on{display:block}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}.stat,.card,.box{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 4px 14px #0000000b}.stat{padding:13px}.stat b{display:block;font-size:1.4rem;color:var(--green)}.stat span,.muted{color:var(--muted);font-size:.84rem}.card{padding:15px;margin-bottom:13px}.card h2,.box h3{margin:0 0 9px;color:var(--green)}.notice{background:#fff5dd;border:1px solid #ead3a0;color:#654717;padding:12px;border-radius:12px;margin-bottom:13px}.status{display:flex;gap:9px;padding:8px 0;border-bottom:1px solid #ece9df}.status:last-child{border:0}.dot{width:9px;height:9px;border-radius:50%;background:#2e7044;margin-top:6px;flex:none}.task,.item{display:flex;gap:9px;align-items:flex-start;padding:7px 0}.task input,.item input{width:20px;height:20px;accent-color:var(--green);margin-top:1px;flex:none}.done{text-decoration:line-through;opacity:.58}.quick{display:grid;grid-template-columns:1fr;gap:8px}.q{background:#f3f5ef;border-radius:11px;padding:11px}.q b{display:block;color:var(--green)}.btn{display:inline-block;border:0;border-radius:10px;padding:10px 12px;background:var(--green);color:#fff;text-decoration:none;font-weight:750}.timeline{margin-left:7px}.day{border-left:2px solid #c9d4c9;padding:0 0 18px 24px;position:relative}.day:last-child{border-left-color:transparent}.day:before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--bg)}.date{font-size:.77rem;text-transform:uppercase;letter-spacing:.06em;font-weight:800;color:#446f4d}.day h3{margin:2px 0 5px}.day ul{margin:7px 0 0;padding-left:18px}.day li{margin:4px 0}.tag{display:inline-block;background:#e9efe9;color:#2c5735;border-radius:999px;padding:4px 8px;font-size:.76rem;font-weight:700;margin:2px}.packtop{position:sticky;top:58px;z-index:7;background:var(--bg);padding:6px 0 9px}.bar{height:10px;background:#dfe1da;border-radius:999px;overflow:hidden}.fill{height:100%;background:var(--green);width:0}.packgrid{display:grid;gap:12px}.box{padding:14px}.box.leave{background:#f5f1ed}.box h3{font-size:1rem}.note{display:block;color:var(--muted);font-size:.8rem;margin-top:1px}.row{display:flex;justify-content:space-between;font-size:.85rem;font-weight:750;margin-bottom:5px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.alt{background:#e4e9e4;color:#2f4a34}.danger{background:#f1e4df;color:#783c2f}.foot{color:var(--muted);font-size:.8rem;padding:16px 0}@media(min-width:720px){.stats{grid-template-columns:repeat(4,1fr)}.quick,.packgrid{grid-template-columns:repeat(2,1fr)}}
+</style></head><body><header><div class="wrap"><h1>The Appalachian Run</h1><div class="sub">Sept 13–20, 2026 · Kentucky · Great Smoky Mountains · Nashville</div><div class="pills"><span class="pill">34.23 trail mi</span><span class="pill">8,274 ft gain</span><span class="pill">3 shelter nights</span><span class="pill" id="countdown">Countdown</span></div></div></header><nav><div class="tabs"><button class="tab on" data-v="dash">Dashboard</button><button class="tab" data-v="itin">Itinerary</button><button class="tab" data-v="pack">Packing</button></div></nav><main class="wrap">
+<section id="dash" class="view on"><div class="stats"><div class="stat"><b>34.23</b><span>AllTrails miles</span></div><div class="stat"><b>8,274'</b><span>elevation gain</span></div><div class="stat"><b>13.9 mi</b><span>longest trail day</span></div><div class="stat"><b>3</b><span>reserved shelters</span></div></div><div class="card"><h2>Confirmed</h2><div id="confirmed"></div></div><div class="card"><h2>Open items</h2><div id="tasks"></div></div><div class="notice"><b>Parking tag:</b> already purchased, but the Tacoma may receive a permanent Kansas plate before departure. Resolve the plate number through the official process before displaying the final tag; do not hand-alter a printed tag.</div><div class="card"><h2>Trail at a glance</h2><div class="quick"><div class="q"><b>Tue · Alum Cave → LeConte</b>~5.2 mi · ~2,763 ft up.</div><div class="q"><b>Wed · LeConte → Icewater</b>Boulevard Trail + Charlies Bunion. Extra mileage is optional.</div><div class="q"><b>Thu · Icewater → Kuwohi → Mt. Collins</b>13.9 mi. Longest day; fill heavily at Icewater.</div><div class="q"><b>Fri · Mt. Collins → Alum Cave</b>~7.8 mi via Road Prong / Chimney Tops corridor and the mapped return to the Tacoma.</div></div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.alltrails.com/explore/custom-routes/at-alum-cave-loop-bdc4bb5?u=i&sh=tn8xrx">Open AllTrails route</a></div></div><div class="card"><h2>Safety quick reference</h2><div class="quick"><div class="q"><b>Water</b>Sawyer + ~3.9 L maximum capacity. Treat all backcountry water.</div><div class="q"><b>Weather</b>Keep insulation, rain shell and dry sleep layers protected.</div><div class="q"><b>Bears</b>Food, trash and scented items go on shelter bear cables.</div><div class="q"><b>Bailout / road access</b>Newfound Gap and Kuwohi are key Thursday decision points.</div></div></div></section>
+<section id="itin" class="view"><div class="card"><h2>Detailed itinerary</h2><p class="muted">Times are targets, not promises. Weather, fatigue, parking and trail conditions take priority.</p><div class="timeline" id="timeline"></div></div></section>
+<section id="pack" class="view"><div class="packtop"><div class="card" style="margin:0"><div class="row"><span id="ptxt">0 checked</span><span id="ppct">0%</span></div><div class="bar"><div class="fill" id="pfill"></div></div><div class="actions"><button class="btn alt" onclick="window.print()">Print / Save PDF</button><button class="btn danger" onclick="resetPack()">Reset packing</button></div></div></div><div class="notice"><b>Target loaded pack:</b> roughly 26–30 lb with food and about 2 L water. Keep the full ~3.9 L water capacity available for Thursday.</div><div class="packgrid" id="packgrid"></div><div class="foot">Checklist state is saved on this device. “Leave in Vehicle” means intentionally confirmed to remain in the Tacoma.</div></section>
+</main><script>
+const confirmed=[['LeConte Shelter','Sept 15–16 confirmed'],['Icewater Spring Shelter','Sept 16–17 confirmed'],['Mt. Collins Shelter','Sept 17–18 confirmed'],['Backcountry permit','Obtained'],['Winchester lodging','Sept 13–14 confirmed'],['Nashville lodging','Sept 18–20 confirmed'],['Insulating layer','Have it'],['Rain pants','Have them'],['Park It Forward weekly tag','Purchased; plate still needs final resolution']];
+const tasks=[['plate','Resolve final Tacoma plate number on parking tag and print valid final tag.'],['sedalia','Confirm approved safe Sedalia parking for Bricen’s vehicle Sept 13–20.'],['shower','Confirm Friday shower/change location in Gatlinburg.'],['contacts','Leave exact route, shelters, Tacoma details and expected return with an emergency contact.'],['offline','Download AllTrails custom route and GSMNP map for offline use on both phones.'],['conditions','Final GSMNP weather / road / trail / shelter / bear check about 72 hours before trail entry.'],['truck','Final Tacoma check: tires/spare, oil, coolant, lights, washer fluid, jack/lug wrench and charging gear.'],['returncar','Lock in the Sunday return route through Sedalia so Bricen can retrieve his vehicle before you both head home.']];
+const itin=[
+['Sat · Sept 12','Bricen → Sedalia / wedding','Bricen leaves Hiawatha for the Sedalia-area wedding in his own vehicle.',[],['Confirm the approved parking location where his vehicle can remain through Sept 20.']],
+['Sun · Sept 13','Hiawatha → Sedalia → Winchester, KY','Laurence leaves Hiawatha in the Tacoma in time to reach Sedalia around 2–3 PM; Bricen transfers into the Tacoma.',['~540 mi Sedalia → Winchester','Long drive'],['Meet in Sedalia ~2–3 PM and transfer gear.','Head east via St. Louis and Louisville.','Cross into Eastern Time.','Winchester hotel confirmed Sept 13–14.','Trade drivers / slow down if tired.']],
+['Mon · Sept 14','Winchester → Hazard, KY','Easy positioning day followed by the full day in Hazard.',['~75 mi','~1 hr 40 min'],['~8:00 AM target departure.','~9:40 AM target arrival in Hazard.','Keep the rest of the day open.']],
+['Tue · Sept 15','Hazard → Cumberland Gap → Alum Cave → LeConte','First trail day and the most time-sensitive transition.',['~225 road mi','~5.2 trail mi','~2,763 ft climb'],['~8:00 AM leave Hazard.','~9:30 AM Harlan area.','~11:00 AM Cumberland Gap / Pinnacle Overlook; shorten or skip if behind.','~2:00 PM target Alum Cave Trailhead arrival.','~2:30 PM target trail start.','Climb via Arch Rock and Alum Cave Bluffs.','Evening at Mt. LeConte Shelter; reservation confirmed Sept 15–16.','Water, dinner, hang all scented items, settle in before dark.']],
+['Wed · Sept 16','LeConte → Boulevard → Icewater Spring','High-ridge day; Charlies Bunion is the core side trip.',['~7–9+ mi','Ridge day'],['~6:30 AM optional Cliff Top sunrise if open/weather is good.','Breakfast, water and pack-up.','~8:00 AM start Boulevard Trail toward the A.T.','Allow roughly 2.5–3.5 hours to reach Icewater.','Stage overnight gear; hang all scented items before side trip.','Charlies Bunion with water, rain gear, insulation, first aid, map/phone and headlamp.','Only continue farther east if time, weather and legs are excellent.','Return to Icewater with daylight; reservation confirmed Sept 16–17.']],
+['Thu · Sept 17','Icewater → Newfound Gap → Kuwohi → Mt. Collins','The defining trail day.',['13.9 mi','Longest day','High elevation'],['Early breakfast and water treatment.','Leave with roughly 3–3.5 L; adjust for actual conditions/intake.','~7:30 AM target departure west on the A.T.','~9:00 AM Newfound Gap; reassess feet, weather and energy.','Continue to Kuwohi; no dependable summit water.','Lunch around midday if conditions cooperate.','Continue to Mt. Collins Shelter.','Allow roughly 7–9 hours total with stops.','Reservation confirmed Sept 17–18.']],
+['Fri · Sept 18','Mt. Collins → Alum Cave → Gatlinburg → Nashville','Shorter trail day followed by a full road transition.',['~7.8 trail mi','~235 road mi'],['~7:00 AM breakfast / coffee / pack-up.','Descend via Road Prong / Chimney Tops corridor.','Follow the custom AllTrails return to the Tacoma at Alum Cave.','Change into clean vehicle clothes.','Gatlinburg shower location still needs confirmation.','Food / optional sightseeing based on energy.','Drive to Nashville only if safe to do so.','Nashville lodging confirmed Sept 18–20.']],
+['Sat · Sept 19','Nashville','Full free day with no required driving.',[],['Morning coffee/pastries; original plan: Barista Parlor.','Farmers’ Market + Bicentennial Mall.','Hot chicken lunch.','12South / Parnassus Books.','Centennial Park + Parthenon.','Evening open; Tennessee State Museum is a weather-backup option.']],
+['Sun · Sept 20','Nashville → Sedalia → Hiawatha, KS','Long final drive home, with a required Sedalia stop so Bricen can recover his vehicle.',['Return route needs final timing'],['~7:00 AM target departure from Nashville.','Route home through Sedalia rather than treating the old direct Nashville → Hiawatha timing as final.','Retrieve Bricen’s vehicle from the approved parking location.','Transfer any remaining gear, then continue toward Hiawatha in separate vehicles.','Recalculate the day’s exact mileage and ETA once the Sedalia parking location is fixed.']]
+];
+const packs=[
+['Pack & Waterproofing',['Gregory Zulu 65 L pack','Trash-compactor / heavy-duty pack liner','65 L waterproof pack cover','Small dry / zip bags for electronics and paperwork']],
+['Sleep System',['REI Trailmade 25 Long sleeping bag','Paria ReCharge XL sleeping pad','Paria pad repair kit / patches','Dedicated dry sleeping socks','Polyester base-layer top','Polyester base-layer bottoms']],
+['Water System',['Sawyer Squeeze filter','1 × 32 oz Sawyer pouch — primary dirty bag','1 × 32 oz Sawyer pouch — backup / extra capacity','2 × ~1 L lightweight water bottles','Sawyer coupling / backflush adapter','Sawyer tube — optional','4–6 chlorine-dioxide tablets — emergency backup','Electrolyte packets']],
+['Rain & Insulation',['Outdoor Ventures waterproof rain jacket','Rain pants','Light fleece or synthetic puffy','Warm beanie','Thin gloves']],
+['Hiking Clothing',['1 pair lightweight hiking pants / 5.11s — worn','1 lightweight synthetic hiking shirt / polo — worn','1 extra lightweight hiking shirt — optional','2 pairs synthetic / bamboo-cool underwear total','3 pairs hiking socks total — worn, spare, dry sleep','Salomon trail runners','Sun / ball cap']],
+['Electronics',['iPhone 13','25,000 mAh Anker power bank','Lightning charging cord','Garmin Vivoactive','Garmin charging cord','Headlamp','Fresh / spare headlamp batteries']],
+['Cooking & Coffee — Shared',['Friend: Jetboil stove / pot','You: fresh 230 g threaded isobutane canister','Mini Bic lighter','Backup mini Bic — optional','Spoon / spork','Instant coffee packets','Lightweight mug / Jetboil cup','AeroPress — optional luxury']],
+['Food — 4 Days / 3 Nights',['3 breakfasts','3 dinners','Trail lunches Tues–Fri','Trail mix portioned by day','Energy / granola bars','Jerky','Dried fruit','Candy / quick carbs','Peanut butter packets / squeeze pouch','Tuna / chicken shelf-stable pouches','1 shared extra emergency meal','Small trash / wrapper bag']],
+['Food Storage / Bears',['10–15 L lightweight food sack','All scented toiletries fit into food sack']],
+['First Aid & Foot Care',['Leukotape','Blister pads / moleskin','Adhesive bandages','2–3 sterile gauze pads','Small medical tape','Ibuprofen / acetaminophen','Antihistamine','Personal medications','Tweezers','Small amount of duct tape','Emergency whistle']],
+['Hygiene & Insects',['Toothbrush','Travel-size toothpaste','Hand sanitizer','Toilet paper','Lightweight trowel','Zip bag for used TP / hygiene trash','20% picaridin repellent','Permethrin-treated hiking clothing / socks','Sunscreen','Lip balm']],
+['Navigation, Permits & Security',['Offline AllTrails custom route','Offline NPS / GSMNP map','Paper trail / park map','Printed / saved backcountry permit','Final valid Park It Forward tag','Photo ID','Small cash + payment card','Vehicle key secured in zipped pocket','Emergency contact has itinerary']],
+['Trail Gear',['Trekking poles','Milwaukee pocket knife','Sunglasses','Small bandana / lightweight wipe']],
+['Optional / Safety Extras',['Emergency bivy / durable emergency blanket — recommended','Satellite communicator — optional','Bear spray — optional','Earplugs']],
+['Leave in Vehicle',['Tent','Second heavy 5.11 pants','Second heavy sweatshirt','Chaco sandals','Coast flashlight','Mini butane torch','Heavy Yeti mug','Bear canister / hanging rope','Large first-aid kit / unnecessary tools','Clean post-hike clothes + underwear','Clean shoes','Towel + shower toiletries','Extra drinks + vehicle snacks'],'leave']];
+function id(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,70)}
+function renderConfirmed(){confirmedEl.innerHTML=confirmed.map(x=>`<div class="status"><i class="dot"></i><div><b>${x[0]}</b><div class="muted">${x[1]}</div></div></div>`).join('')}
+function renderTasks(){let s=JSON.parse(localStorage.tripTasks||'{}');tasksEl.innerHTML=tasks.map(x=>`<label class="task"><input data-task="${x[0]}" type="checkbox" ${s[x[0]]?'checked':''}><span class="${s[x[0]]?'done':''}">${x[1]}</span></label>`).join('');document.querySelectorAll('[data-task]').forEach(b=>b.onchange=e=>{let q=JSON.parse(localStorage.tripTasks||'{}');q[e.target.dataset.task]=e.target.checked;localStorage.tripTasks=JSON.stringify(q);renderTasks()})}
+function renderItin(){timeline.innerHTML=itin.map(d=>`<div class="day"><div class="date">${d[0]}</div><h3>${d[1]}</h3><div>${d[2]}</div>${d[3].map(t=>`<span class="tag">${t}</span>`).join('')}<ul>${d[4].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}
+function renderPack(){let s=JSON.parse(localStorage.smokiesPackV2||'{}');if(!Object.keys(s).length){try{let old=JSON.parse(localStorage.smokiesChecklist||'[]'),n=0;packs.forEach(c=>c[1].forEach(x=>{if(n<old.length)s[id(c[0]+'-'+x)]=!!old[n];n++}));if(old.length)localStorage.smokiesPackV2=JSON.stringify(s)}catch(e){}}packgrid.innerHTML=packs.map(c=>`<div class="box ${c[2]||''}"><h3>${c[0]}</h3>${c[1].map(x=>{let k=id(c[0]+'-'+x),on=!!s[k];return `<label class="item"><input data-pack="${k}" type="checkbox" ${on?'checked':''}><span class="${on?'done':''}">${x}</span></label>`}).join('')}</div>`).join('');document.querySelectorAll('[data-pack]').forEach(b=>b.onchange=e=>{let q=JSON.parse(localStorage.smokiesPackV2||'{}');q[e.target.dataset.pack]=e.target.checked;localStorage.smokiesPackV2=JSON.stringify(q);renderPack()});let b=[...document.querySelectorAll('[data-pack]')],n=b.filter(x=>x.checked).length,p=Math.round(n/b.length*100);ptxt.textContent=`${n} of ${b.length} checked`;ppct.textContent=p+'%';pfill.style.width=p+'%'}
+function resetPack(){if(confirm('Clear every packing checkbox?')){localStorage.removeItem('smokiesPackV2');localStorage.removeItem('smokiesChecklist');renderPack()}}
+const confirmedEl=document.getElementById('confirmed'),tasksEl=document.getElementById('tasks');document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab,.view').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById(t.dataset.v).classList.add('on');scrollTo(0,0)});let d=Math.ceil((new Date('2026-09-13T00:00:00-05:00')-new Date())/86400000);countdown.textContent=d>1?`${d} days to departure`:d===1?'Tomorrow':'Trip time';renderConfirmed();renderTasks();renderItin();renderPack();if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
+</script></body></html>

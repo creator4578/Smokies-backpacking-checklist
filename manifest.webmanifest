@@ -1,16 +1,10 @@
 {
-  "name": "Smokies Backpacking Checklist",
-  "short_name": "Smokies Pack",
+  "name": "Appalachian Run Trip Dashboard",
+  "short_name": "Appalachian Run",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f4f1e8",
+  "background_color": "#f3f1e9",
   "theme_color": "#2f5d3a",
-  "icons": [
-    {
-      "src": "app-icon.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "icons": [{"src":"app-icon.png","sizes":"512x512","type":"image/png"}]
 }
