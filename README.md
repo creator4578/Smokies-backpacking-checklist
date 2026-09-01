@@ -1,0 +1,1 @@
+# Smokies-backpacking-checklist
