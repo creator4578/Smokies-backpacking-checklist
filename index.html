@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#2f5d3a" name="theme-color"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="default" name="apple-mobile-web-app-status-bar-style"/><meta content="Appalachian Run" name="apple-mobile-web-app-title"/><link href="app-icon.png" rel="apple-touch-icon"/><link href="manifest.webmanifest" rel="manifest"/><title>Appalachian Run</title><style>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#2f5d3a" name="theme-color"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><meta content="Appalachian Run" name="apple-mobile-web-app-title"/><link href="app-icon.png" rel="apple-touch-icon"/><link href="manifest.webmanifest" rel="manifest"/><title>Appalachian Run</title><script>if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true)document.documentElement.classList.add('standalone');</script><style>
 :root{
   --bg:#f3f1e9;
   --surface:#fffdf8;
@@ -22,6 +22,10 @@
   --page-pad:18px;
   --content-max:980px;
   --nav-height:61px;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-right:env(safe-area-inset-right,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+  --safe-left:env(safe-area-inset-left,0px);
   --s1:4px;
   --s2:8px;
   --s3:12px;
@@ -40,7 +44,7 @@ body{
   line-height:1.5;
   background:var(--bg);
   color:var(--text);
-  padding-bottom:max(var(--s6),env(safe-area-inset-bottom,0px));
+  padding-bottom:max(var(--s6),var(--safe-bottom));
   -webkit-font-smoothing:antialiased;
 }
 button,input{font:inherit}
@@ -51,13 +55,13 @@ a{color:inherit}
   width:100%;
   max-width:var(--content-max);
   margin-inline:auto;
-  padding-left:max(var(--page-pad),env(safe-area-inset-left,0px));
-  padding-right:max(var(--page-pad),env(safe-area-inset-right,0px));
+  padding-left:max(var(--page-pad),var(--safe-left));
+  padding-right:max(var(--page-pad),var(--safe-right));
 }
 header{
   background:var(--accent-strong);
   color:#fff;
-  padding-top:calc(var(--s6) + env(safe-area-inset-top,0px));
+  padding-top:calc(var(--s6) + var(--safe-top));
   padding-bottom:var(--s5);
 }
 h1{
@@ -86,29 +90,51 @@ nav{
   top:0;
   z-index:20;
   min-height:var(--nav-height);
-  background:rgba(243,241,233,.96);
+  background:rgba(243,241,233,.97);
   -webkit-backdrop-filter:blur(14px);
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
 }
+/* In the installed iPhone Home Screen app, keep the sticky tabs entirely below
+   the status-bar/notch safe area. The fixed green strip keeps the white iOS
+   status icons legible after the hero header has scrolled away. */
+.standalone body::before{
+  content:"";
+  position:fixed;
+  top:0;left:0;right:0;
+  height:var(--safe-top);
+  background:var(--accent-strong);
+  z-index:30;
+  pointer-events:none;
+}
+.standalone nav{top:var(--safe-top)}
 .tabs{
-  display:flex;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  align-items:stretch;
   gap:6px;
   padding-top:8px;
   padding-bottom:8px;
 }
 .tab{
-  flex:1 1 0;
+  -webkit-appearance:none;
+  appearance:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
   min-width:0;
   min-height:44px;
   border:1px solid transparent;
   border-radius:var(--radius-sm);
-  padding:0 8px;
+  padding:0 6px;
   background:transparent;
   color:var(--muted);
+  text-align:center;
   font-size:.82rem;
   line-height:1.1;
   font-weight:750;
+  letter-spacing:-.005em;
   white-space:nowrap;
 }
 .tab.on{background:var(--accent);color:#fff;border-color:var(--accent)}
@@ -227,6 +253,7 @@ main{padding-top:var(--s4);padding-bottom:var(--s5)}
   padding:8px 0 2px;
   background:linear-gradient(to bottom,var(--bg) 80%,rgba(243,241,233,0));
 }
+.standalone .packtop{top:calc(var(--nav-height) + var(--safe-top))}
 .progress-card{box-shadow:0 4px 18px rgba(28,35,27,.07)}
 .row{display:flex;justify-content:space-between;gap:var(--s3);font-size:.86rem;font-weight:750;margin-bottom:var(--s2)}
 .bar{height:9px;background:#dfe3dc;border-radius:999px;overflow:hidden}
@@ -282,7 +309,7 @@ main{padding-top:var(--s4);padding-bottom:var(--s5)}
   .actions .btn{flex:1 1 145px}
 }
 @media (max-width:360px){
-  .tab{font-size:.76rem;padding-inline:4px}
+  .tab{font-size:.76rem;padding-inline:3px}
   .stats{gap:10px}
   .stat{padding:14px}
 }

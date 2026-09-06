@@ -1,4 +1,4 @@
-const CACHE='appalachian-run-v3';
+const CACHE='appalachian-run-v4';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./app-icon.png'];
 
 self.addEventListener('install',event=>{
